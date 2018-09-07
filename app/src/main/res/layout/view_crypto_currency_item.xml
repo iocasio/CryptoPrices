@@ -2,41 +2,43 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="175dp" android:layout_height="175dp"
-    android:layout_margin="15dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/crypto_item_dimens"
+    android:layout_height="@dimen/crypto_item_dimens"
+    android:layout_margin="@dimen/crypto_item_margin">
 
     <View
         android:id="@+id/currency_background"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:background="#FF9900"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="#FF9900"/>
 
     <TextView
         android:id="@+id/currency_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:textColor="#FFF"
-        android:textSize="40sp"
+        android:layout_marginTop="@dimen/currency_code_marginTop"
+        android:textSize="@dimen/currency_code_textSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="BTC"/>
+        tools:text="BTC"
+        tools:textColor="#FFF"/>
 
     <TextView
         android:id="@+id/currency_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Bitcoin 6407.05"
-        android:textColor="#FFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currency_code"/>
+        app:layout_constraintTop_toBottomOf="@+id/currency_code"
+        tools:text="Bitcoin 6407.05"
+        tools:textColor="#FFF"/>
 
 </android.support.constraint.ConstraintLayout>
