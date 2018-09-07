@@ -5,9 +5,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
+import ocasiodev.cryptoprices.model.CryptoCurrency;
 import ocasiodev.cryptoprices.ui.viewholder.CryptoViewHolder;
 
 public class CryptoCurrencyAdapter extends RecyclerView.Adapter<CryptoViewHolder>{
+
+    private ArrayList<CryptoCurrency> mCryptoCurrencies;
+
+    public CryptoCurrencyAdapter(ArrayList<CryptoCurrency> cryptoCurrencies){
+        mCryptoCurrencies = cryptoCurrencies;
+    }
 
     @NonNull
     @Override
@@ -22,10 +31,14 @@ public class CryptoCurrencyAdapter extends RecyclerView.Adapter<CryptoViewHolder
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mCryptoCurrencies.size();
     }
 
     private int getLayoutRes(){
         return 0;
+    }
+
+    public ArrayList<CryptoCurrency> getCryptoCurrencies() {
+        return mCryptoCurrencies;
     }
 }
