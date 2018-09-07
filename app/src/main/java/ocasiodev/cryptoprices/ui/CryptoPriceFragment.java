@@ -8,11 +8,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import javax.inject.Inject;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import ocasiodev.cryptoprices.CryptoApplication;
 import ocasiodev.cryptoprices.R;
+import ocasiodev.cryptoprices.network.service.CryptoCurrencyService;
 
-public class CryptoPriceFragment extends Fragment  {
+public class CryptoPriceFragment extends Fragment {
+
+    public static final String LOG_TAG = "CryptoPriceFragment";
 
     public static CryptoPriceFragment newInstance(Bundle bundle) {
         CryptoPriceFragment fragment = new CryptoPriceFragment();
@@ -20,11 +26,15 @@ public class CryptoPriceFragment extends Fragment  {
         return fragment;
     }
 
+    @Inject
+    CryptoCurrencyService mCryptoCurrencyService;
+
     private Unbinder mUnbinder;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        CryptoApplication.getInstance().getAppComponent().inject(this);
     }
 
     @Override
@@ -40,8 +50,7 @@ public class CryptoPriceFragment extends Fragment  {
         init();
     }
 
-    private void init(){
-
+    private void init() {
     }
 
     @Override
