@@ -94,6 +94,7 @@ public class CryptoPriceFragment extends Fragment implements CurrencyDataListene
         if (priceData != null) {
             int itemPosition = mCryptoCurrencyAdapter.getCryptoCurrencies().indexOf(cryptoCurrency);
             if (itemPosition != -1) {
+                mCryptoCurrencyAdapter.getCryptoCurrencies().get(itemPosition).setPriceData(cryptoCurrency.getPriceData());
                 mCryptoCurrencyAdapter.notifyItemChanged(itemPosition, cryptoCurrency.getPriceData());
             }
             Log.d(LOG_TAG, cryptoCurrency.getName() + " " + String.valueOf(priceData.getMidPrice()));

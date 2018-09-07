@@ -3,4 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="bitcoin_primary">#FF9900</color>
+    <color name="bitcoin_secondary">#FFFFFF</color>
+    <color name="bitcoin_classic_primary">#FF9900</color>
+    <color name="bitcoin_classic_secondary">#003366</color>
+    <color name="ethereum_primary">#3C3C3D</color>
+    <color name="ethereum_secondary">#FFFFFF</color>
+    <color name="litecoin_primary">#d3d3d3</color>
+    <color name="litecoin_secondary">#FFFFFF</color>
+    <color name="neo_primary">#29FF14</color>
+    <color name="neo_secondary">#FFFFFF</color>
 </resources>

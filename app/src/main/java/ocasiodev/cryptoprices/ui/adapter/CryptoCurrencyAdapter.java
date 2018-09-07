@@ -6,15 +6,18 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import ocasiodev.cryptoprices.R;
 import ocasiodev.cryptoprices.model.CryptoCurrency;
+import ocasiodev.cryptoprices.model.PriceData;
 import ocasiodev.cryptoprices.ui.viewholder.CryptoViewHolder;
 
-public class CryptoCurrencyAdapter extends RecyclerView.Adapter<CryptoViewHolder>{
+public class CryptoCurrencyAdapter extends RecyclerView.Adapter<CryptoViewHolder> {
 
     private ArrayList<CryptoCurrency> mCryptoCurrencies;
 
-    public CryptoCurrencyAdapter(ArrayList<CryptoCurrency> cryptoCurrencies){
+    public CryptoCurrencyAdapter(ArrayList<CryptoCurrency> cryptoCurrencies) {
         mCryptoCurrencies = cryptoCurrencies;
     }
 
@@ -26,7 +29,21 @@ public class CryptoCurrencyAdapter extends RecyclerView.Adapter<CryptoViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull CryptoViewHolder cryptoViewHolder, int i) {
-        cryptoViewHolder.bind();
+        CryptoCurrency cryptoCurrency = mCryptoCurrencies.get(i);
+        cryptoViewHolder.bind(cryptoCurrency);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull CryptoViewHolder holder, int position, @NonNull List<Object> payloads) {
+        super.onBindViewHolder(holder, position, payloads);
+        if (!payloads.isEmpty()){
+            for (Object o:payloads) {
+                if (o instanceof PriceData){
+                    PriceData priceData = (PriceData)o;
+                    holder.bind(priceData);
+                }
+            }
+        }
     }
 
     @Override
@@ -34,8 +51,8 @@ public class CryptoCurrencyAdapter extends RecyclerView.Adapter<CryptoViewHolder
         return mCryptoCurrencies.size();
     }
 
-    private int getLayoutRes(){
-        return 0;
+    private int getLayoutRes() {
+        return R.layout.view_crypto_currency_item;
     }
 
     public ArrayList<CryptoCurrency> getCryptoCurrencies() {
