@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="crypto_item_dimens">175dp</dimen>
+    <dimen name="crypto_item_margin">15dp</dimen>
+    <dimen name="currency_code_marginTop">5dp</dimen>
+    <dimen name="currency_code_textSize">40sp</dimen>
+</resources>
